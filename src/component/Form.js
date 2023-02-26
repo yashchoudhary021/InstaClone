@@ -11,7 +11,7 @@ function Form() {
     const [description, setDescription] = useState("");
 
     const SubmitHandler = async (e) => {
-        e.priventDefault()
+        e.preventDefault();
         try {
             const formData = new FormData();
             formData.append("image", image);
@@ -31,7 +31,7 @@ function Form() {
       };
     return (<>
         <Navigation />
-        <form action="#" method="POST" onSubmit={SubmitHandler}>
+        <form action="/postview" method="POST" onSubmit={SubmitHandler}>
             <div id='first'>
                 <input type="file" onChange={handleImageChange} />
             </div>
