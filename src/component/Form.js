@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
-    
+    const navigate = useNavigate();
     const [image, setImage] = useState(null);
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
@@ -21,6 +22,7 @@ function Form() {
         } catch (error) {
             console.error(error);
         }
+        navigate("/postview")
         // e.preventDefault();
     };
 
@@ -29,7 +31,7 @@ function Form() {
       };
     return (<>
         <Navigation />
-        <form action="/postview" onSubmit={SubmitHandler}>
+        <form action="#" method="POST" onSubmit={SubmitHandler}>
             <div id='first'>
                 <input type="file" onChange={handleImageChange} />
             </div>
