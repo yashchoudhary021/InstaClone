@@ -18,7 +18,8 @@ function Form() {
             formData.append("name", name);
             formData.append("location", location);
             formData.append("description", description);
-            const res = await axios.post("https://yash-instaclone-backend.onrender.com/upload", formData);            
+            const res = await axios.post("https://https://yash-instaclone-backend.onrender.com/upload", formData);
+           
             console.log(res.data);
         } catch (error) {
             console.error(error);
@@ -31,20 +32,19 @@ function Form() {
       };
     return (<>
         <Navigation />
-        <form action="/postview" method="POST" onSubmit={SubmitHandler}>
+        <form  action="/postview" method="POST" onSubmit={SubmitHandler}>
             <div id='first'>
                 <input type="file" onChange={handleImageChange} />
             </div>
             <div>
-                <input id='kkd' type="text" placeholder="Author" onChange={(e)=>setName(e.target.value)} required />
-                <input type="text" placeholder="Location" onChange={(e)=>setLocation(e.target.value)} required/>
+                <input id='kkd' type="text" placeholder="Author" onChange={(e)=>setName(e.target.value)} />
+                <input type="text" placeholder="Location" onChange={(e)=>setLocation(e.target.value)}/>
             </div>
             <div>
-                <input id='dis' type="text" placeholder="Description" onChange={(e)=>setDescription(e.target.value)} required />
+                <input id='dis' type="text" placeholder="Description" onChange={(e)=>setDescription(e.target.value)} />
             </div>
             <button id='submit' type="submit" >Post</button>
         </form>
     </>)
 }
 export default Form;
-
