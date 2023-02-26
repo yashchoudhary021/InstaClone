@@ -11,6 +11,7 @@ function Form() {
     const [description, setDescription] = useState("");
 
     const SubmitHandler = async (e) => {
+        e.priventDefault()
         try {
             const formData = new FormData();
             formData.append("image", image);
@@ -23,7 +24,6 @@ function Form() {
             console.error(error);
         }
         navigate("/postview")
-        // e.preventDefault();
     };
 
     const handleImageChange = (e) => {
