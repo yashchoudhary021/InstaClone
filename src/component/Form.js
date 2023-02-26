@@ -18,7 +18,7 @@ function Form() {
             formData.append("name", name);
             formData.append("location", location);
             formData.append("description", description);
-            const res = await axios.post("https://https://yash-instaclone-backend.onrender.com/upload", formData);
+            const res = await axios.post("https://yash-instaclone-backend.onrender.com/upload", formData);
            
             console.log(res.data);
         } catch (error) {
